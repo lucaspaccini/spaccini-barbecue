@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spaccini Barbecue
 
-## Getting Started
+This repository contains the foundation of the official Spaccini Barbecue website, serving Perugia and Umbria. The current release is a responsive, accessible branded foundation while the full commercial website is defined; it is not the final commercial experience.
 
-First, run the development server:
+The canonical website URL is [https://www.spaccinibarbecue.com](https://www.spaccinibarbecue.com).
+
+## Technology
+
+- Next.js 16 with the App Router
+- React 19
+- TypeScript in strict mode
+- Tailwind CSS 4
+- Vitest and Testing Library
+- GitHub Actions for quality checks
+- Vercel for hosting and deployment
+
+## Prerequisites
+
+- Git
+- [nvm](https://github.com/nvm-sh/nvm)
+- The Node.js version declared in [`.nvmrc`](./.nvmrc)
+- The npm version bundled with that Node.js release
+
+## Ubuntu setup
 
 ```bash
+git clone https://github.com/lucaspaccini/spaccini-barbecue.git
+cd spaccini-barbecue
+nvm install
+nvm use
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Use npm as the only package manager. `npm ci` installs the exact dependency versions recorded in `package-lock.json`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available scripts
 
-## Learn More
+| Command                | Purpose                                     |
+| ---------------------- | ------------------------------------------- |
+| `npm run dev`          | Start the local Next.js development server. |
+| `npm run build`        | Create an optimized production build.       |
+| `npm run start`        | Serve a completed production build.         |
+| `npm run format`       | Format supported files with Prettier.       |
+| `npm run format:check` | Check formatting without changing files.    |
+| `npm run lint`         | Run ESLint across the project.              |
+| `npm run lint:fix`     | Apply ESLint's safe automatic fixes.        |
+| `npm run typecheck`    | Run TypeScript without emitting files.      |
+| `npm test`             | Run the Vitest suite once.                  |
+| `npm run test:watch`   | Run Vitest in watch mode.                   |
 
-To learn more about Next.js, take a look at the following resources:
+## Repository structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+.
+├── .github/              # CI and dependency update configuration
+├── docs/                 # Architecture and deployment notes
+├── public/               # Approved static assets
+├── src/app/              # App Router pages, metadata, and global styles
+├── src/test/             # Test setup and behavior-focused tests
+├── .nvmrc                # Pinned local Node.js version
+├── package.json          # npm scripts and dependency manifest
+└── vitest.config.mts     # Vitest configuration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment variables
 
-## Deploy on Vercel
+The foundation currently requires no environment variables. [`.env.example`](./.env.example) documents that state and contains no credentials. Never commit real `.env` files or sensitive values.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Quality checks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the same core checks used by CI before handing off a change:
+
+```bash
+npm run format:check
+npm run lint
+npm run typecheck
+npm test
+npm run build
+npm audit --omit=dev
+```
+
+The `CI` GitHub Actions workflow runs on every pull request, on pushes to `main`, and on manual dispatch. It installs dependencies with `npm ci`, performs the checks above, and does not deploy the site. Dependabot checks npm packages and GitHub Actions weekly, groups compatible minor and patch updates, and leaves major updates as individual pull requests.
+
+## Deployment
+
+Production deployment uses the GitHub–Vercel integration, not GitHub Actions. `main` is the production branch and pull requests provide preview deployments. See [Deployment](./docs/deployment.md) for the release process and domain checklist.
+
+For architectural scope and extension guidelines, see [Architecture](./docs/architecture.md).
+
+For a factual record of completed work, verification results, decisions, and planned next steps, see [Sprint History](./docs/sprint-history.md).
+
+## License and ownership
+
+This repository and its assets are proprietary. All rights reserved. No open-source license is granted, and this repository intentionally has no `LICENSE` file.
