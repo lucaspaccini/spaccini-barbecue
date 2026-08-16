@@ -6,7 +6,7 @@ import sitemap from "@/app/sitemap";
 
 const canonicalUrl = "https://www.spaccinibarbecue.com";
 const description =
-  "Cotture lente e barbecue per eventi a Perugia e in Umbria. Il nuovo sito è in preparazione.";
+  "Barbecue dal vivo e cotture lente per eventi a Perugia e in Umbria, con preparazioni su prenotazione e servizio concordato sull'occasione.";
 
 describe("foundation SEO", () => {
   it("declares Italian as the document language", () => {
@@ -19,7 +19,7 @@ describe("foundation SEO", () => {
   it("exports the approved metadata and Open Graph values", () => {
     expect(metadata.metadataBase).toEqual(new URL(canonicalUrl));
     expect(metadata.title).toEqual({
-      default: "Spaccini Barbecue",
+      default: "Barbecue per eventi in Umbria | Spaccini Barbecue",
       template: "%s | Spaccini Barbecue",
     });
     expect(metadata.description).toBe(description);
@@ -29,6 +29,8 @@ describe("foundation SEO", () => {
       type: "website",
       locale: "it_IT",
       siteName: "Spaccini Barbecue",
+      title: "Barbecue per eventi in Umbria | Spaccini Barbecue",
+      description,
     });
   });
 

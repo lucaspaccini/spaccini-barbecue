@@ -6,3 +6,4 @@ package-lock.json
 next-env.d.ts
 *.tsbuildinfo
 public/spaccini-barbecue-logo.svg
+.agents/

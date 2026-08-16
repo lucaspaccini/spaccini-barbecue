@@ -356,8 +356,11 @@ Do not ask for a full event specification at first contact. Use conditional foll
 
 ### Alternative contact routes
 
-- A verified telephone number should be the first fallback once approved.
-- WhatsApp is a decision to evaluate, not an assumed channel.
+- Instagram `@bbq.you` is the only currently verified public contact and is the temporary destination for the homepage enquiry CTA.
+- A dedicated commercial telephone number remains an open pre-launch decision.
+- WhatsApp Business is the intended primary direct-contact channel once the dedicated commercial number, account ownership, availability, and response process are approved.
+- A telephone call using the dedicated commercial number is the intended future alternative to WhatsApp Business.
+- Roberto's personal telephone number is private and must not be published on the website or recorded in this brief.
 - The pickup address must not appear until verified for public visits.
 - Each contact route needs ownership, availability expectations, privacy information, and a response process.
 
@@ -381,7 +384,8 @@ Do not ask for a full event specification at first contact. Use conditional foll
 | Secondary           | `Vedi il servizio per eventi`    | Route mixed-intent visitors                       | Home and relevant content                        |
 | Secondary           | `Scopri prenotazione e ritiro`   | Route pickup intent                               | Home and preparation content                     |
 | Tertiary            | `Conosci Roberto e il sistema`   | Support trust and differentiation                 | Proof and story sections                         |
-| Fallback            | `Chiama` or `Scrivi su WhatsApp` | Offer direct contact                              | Only after channel and availability are verified |
+| Current contact     | `Scrivici su Instagram`          | Use the only currently verified public channel    | Final homepage CTA and footer                    |
+| Future direct       | `Scrivi su WhatsApp` or `Chiama` | Offer direct contact after dedicated-number setup | Only after channel and availability are verified |
 
 CTA frequency should follow decision moments, not repeat mechanically after every paragraph. Button labels must describe the next step and avoid false commitment such as “Book now” while booking is not automatic.
 
@@ -619,7 +623,7 @@ Define the current equipment, foods, fat content, fuel, wood, temperatures, dura
 - [ ] Official contact details
 - [ ] Exact pickup address and visitor instructions
 - [ ] Typical response times
-- [ ] Telephone and WhatsApp availability decisions
+- [ ] Dedicated commercial number, WhatsApp Business ownership, and telephone availability decisions
 - [ ] Geographic coverage and travel rules
 - [ ] Electrical, water, shelter, access, surface, and logistical requirements
 - [ ] Deposit, cancellation, weather, and payment rules
